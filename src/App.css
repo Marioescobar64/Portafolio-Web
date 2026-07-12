@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+
+[data-theme="dark"] {
+  /* Paleta Oscura Adaptada */
+  --color1: #e7d9d2; /* Ahora el más claro es el texto principal */
+  --color2: #c6b1b6; 
+  --color3: #877d73; 
+  --color4: #604c59; 
+  --color5: #1c121b; /* Fondo oscuro basado en tu color místico dominante */
+
+  --bg-color: var(--color5);
+  --text-main: var(--color1);
+  --text-muted: var(--color2);
+  --card-bg: rgba(96, 76, 89, 0.25); /* Transparencia adaptada al fondo oscuro */
+  --accent-color: var(--color3);
+  --border-color: rgba(198, 177, 182, 0.15);
+  --nav-bg: rgba(28, 18, 27, 0.85); /* Navbar oscuro fluido */
+}
+
+:root {
+  /* Designer Palette */
+  --color1: #453143; /* Darkest */
+  --color2: #604c59; /* Dark */
+  --color3: #877d73; /* Medium */
+  --color4: #c6b1b6; /* Light */
+  --color5: #e7d9d2; /* Lightest (Background) */
+
+  --bg-color: var(--color5);
+  --text-main: var(--color1);
+  --text-muted: var(--color2);
+  --card-bg: rgba(198, 177, 182, 0.25); /* Subtle transparent use of color4 */
+  --accent-color: var(--color3);
+  --border-color: rgba(96, 76, 89, 0.15); /* color2 with opacity */
+  --nav-bg: rgba(231, 217, 210, 0.85); /* color5 transparent */
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Base resets */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  transition: all 0.4s ease;
+  min-height: 100vh;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, a, button {
+  color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px;
+  color: var(--text-main);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color3);
+  box-shadow: 0 10px 30px rgba(69, 49, 67, 0.08); /* color1 shadow */
+}
+
+/* Badge/Tag */
+.badge {
+  background: transparent;
+  border: 1px solid var(--color3);
+  color: var(--color2);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: var(--color3);
+  color: var(--color5);
+}
+
+/* Content Container for tabs */
+.tab-content {
+  padding-top: 100px; /* Space for Navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 50px;
+}
