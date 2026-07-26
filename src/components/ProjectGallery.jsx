@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 // IMPORTAMOS TUS IMÁGENES DESDE src/assets/
 import controllerImg from "../assets/controller.png";
-import estructuraImg from "../assets/Estructura.png";
+import estructuraImg from "../assets/estructura.png";
 import funcion1Img from "../assets/funcion1.png";
 import funcion2Img from "../assets/funcion2.png";
 import mapperImg from "../assets/Mapper.png";

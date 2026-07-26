@@ -4,6 +4,8 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Projects } from "./components/Projects";
 import { AnimatePresence, motion } from "framer-motion";
+import videofondoLight from "./assets/video/videofondo.mp4";
+import videofondoDark from "./assets/video/videoFondoOscuro.mp4";
 import "./App.css";
 
 function App() {
@@ -39,7 +41,7 @@ function App() {
         }}
       >
         <source 
-          src={theme === "light" ? "src/assets/video/videofondo.mp4" : "src/assets/video/videoFondoOscuro.mp4"} 
+          src={theme === "light" ? videofondoLight : videofondoDark} 
           type="video/mp4" 
         />
         Tu navegador no soporta el formato de video.

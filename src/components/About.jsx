@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MiFoto from "../assets/MiFoto.jpeg";
 
 export function About() {
   const habilidades = [
@@ -43,7 +44,7 @@ export function About() {
             Mario Alejandro Escobar Silva
           </h3>
           <img 
-            src="/src/assets/MiFoto.jpeg" 
+            src={MiFoto} 
             alt="Mi foto personal" 
             style={{
               width: "150px",
