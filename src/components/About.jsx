@@ -6,8 +6,8 @@ export function About() {
     { nombre: "Node.js / Express", porcentaje: "75%" },
     { nombre: "JavaScript", porcentaje: "80%" },
     { nombre: "SQL & Bases de Datos", porcentaje: "70%" },
-    { nombre: "Cisco NetAcad (Hardware/Redes)", porcentaje: "85%" },
-    { nombre: "GitHub / Git", porcentaje: "75%" }
+    { nombre: "Diseños de pagina web y  Diseños llamativos", porcentaje: "85%" },
+    { nombre: "GitHub / Git", porcentaje: "75%" },
   ];
 
   return (
@@ -43,24 +43,24 @@ export function About() {
             Mario Alejandro Escobar Silva
           </h3>
           <img 
-  src="/src/assets/MiFoto.jpeg" 
-  alt="Mi foto personal" 
-  style={{
-    width: "150px",
-    height: "150px",
-    borderRadius: "50%", 
-    objectFit: "cover", 
-    display: "block",
-    margin: "20px auto", 
-    border: "3px solid var(--color4)", 
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
-  }}
-/>
+            src="/src/assets/MiFoto.jpeg" 
+            alt="Mi foto personal" 
+            style={{
+              width: "150px",
+              height: "150px",
+              borderRadius: "50%", 
+              objectFit: "cover", 
+              display: "block",
+              margin: "20px auto", 
+              border: "3px solid var(--color4)", 
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
+            }}
+          />
           <p style={{ color: "var(--color2)", lineHeight: "1.8", fontSize: "1.1rem" }}>
             Soy estudiante de sexto perito en informática en el Centro Educativo Técnico Laboral Kinal,
-             enfocado en el desarrollo backend junior y diseño web. Mi meta fundamental es integrarme al ámbito tecnológico profesional, 
-             aportando capacidades óptimas en lógica de programación y persistencia de datos, 
-             manteniendo siempre una formación continua hacia tecnologías de vanguardia.
+            enfocado en el desarrollo backend junior y diseño web. Mi meta fundamental es integrarme al ámbito tecnológico profesional, 
+            aportando capacidades óptimas en lógica de programación y persistencia de datos, 
+            manteniendo siempre una formación continua hacia tecnologías de vanguardia.
           </p>
 
         </motion.div>
@@ -84,11 +84,28 @@ export function About() {
             <p style={{ fontSize: "1.05rem" }}><strong>Edad:</strong> 19 años</p>
             <p style={{ fontSize: "1.05rem" }}><strong>Formación:</strong> 6to Perito en Informática</p>
             <p style={{ fontSize: "1.05rem" }}><strong>Ubicación:</strong> Guatemala</p>
-            {/* ENLACES INDICADOS PARA CAMBIO MANUAL */}
-            <p style={{ fontSize: "1.05rem" }}><strong>Correo:</strong> <a href="mailto:tu-correo@ejemplo.com"
-             style={{ textDecoration: "underline" }}>escobarmarios9607@gmail.com</a></p>
-            <p style={{ fontSize: "1.05rem" }}><strong>LinkedIn:</strong> <a href="REEMPLAZA_CON_TU_LINKEDIN_AQUÍ" 
-            target="_blank" rel="noreferrer" style={{ textDecoration: "underline", color: "var(--color3)" }}>Mi Perfil</a></p>
+            
+            {/* CORRECCIÓN DE ENLACES EXTERNOS (CON HTTPS://) */}
+            <p style={{ fontSize: "1.05rem" }}>
+              <strong>Correo:</strong>{" "}
+              <a 
+                href="mailto:escobarmarios9607@gmail.com"
+                style={{ textDecoration: "underline" }}
+              >
+                escobarmarios9607@gmail.com
+              </a>
+            </p>
+            <p style={{ fontSize: "1.05rem" }}>
+              <strong>LinkedIn:</strong>{" "}
+              <a 
+                href="https://www.linkedin.com/in/mario-escobar-silva-b12ab7421" 
+                target="_blank" 
+                rel="noreferrer" 
+                style={{ textDecoration: "underline", color: "var(--color3)" }}
+              >
+                Mi Perfil
+              </a>
+            </p>
           </div>
         </motion.div>
 
@@ -109,7 +126,7 @@ export function About() {
                   <span>{hab.nombre}</span>
                   <span>{hab.porcentaje}</span>
                 </div>
-                {/* Contenedor de la barra estadística visual exigida por rúbrica */}
+                {/* Contenedor de la barra estadística visual */}
                 <div style={{ width: "100%", height: "8px", background: "rgba(96, 76, 89, 0.2)", borderRadius: "10px", overflow: "hidden" }}>
                   <div style={{ width: hab.porcentaje, height: "100%", background: "var(--color2)", borderRadius: "10px" }}></div>
                 </div>

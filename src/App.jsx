@@ -10,7 +10,6 @@ function App() {
   const [activeTab, setActiveTab] = useState("inicio");
   const [theme, setTheme] = useState("light");
 
-  // Hook que escucha los cambios de tema y altera la propiedad global del HTML
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
@@ -20,8 +19,46 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      {/* Enviamos el tema y la función para cambiarlo directamente a la Navbar */}
+    <div className="app-container" style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+      
+      {/* VIDEO DINÁMICO QUE CAMBIA SEGÚN EL TEMA */}
+      <video
+        key={theme} // Importante para re-renderizar el video al cambiar de modo
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          zIndex: -2
+        }}
+      >
+        <source 
+          src={theme === "light" ? "src/assets/video/videofondo.mp4" : "src/assets/video/videoFondoOscuro.mp4"} 
+          type="video/mp4" 
+        />
+        Tu navegador no soporta el formato de video.
+      </video>
+
+      {/* CAPA DE CAPTURA / OVERLAY PARA ASEGURAR LEGIBILIDAD */}
+      <div 
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.2)",
+          zIndex: -1,
+          pointerEvents: "none"
+        }}
+      />
+
       <Navbar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
@@ -29,7 +66,7 @@ function App() {
         toggleTheme={toggleTheme} 
       />
 
-      <main className="tab-content">
+      <main className="tab-content" style={{ position: "relative", zIndex: 1 }}>
         <AnimatePresence mode="wait">
           {activeTab === "inicio" && (
             <motion.div

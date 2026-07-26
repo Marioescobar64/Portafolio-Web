@@ -1,31 +1,32 @@
 import { motion } from "framer-motion";
 
 export function Projects() {
+  // 1. AQUÍ COLOCAS TU ENLACE DE GOOGLE DRIVE:
+  const urlGoogleDrive = "https://drive.google.com/drive/folders/1ki03xchbV2_sZwQCkaSyfuWQm0Q6ZVqw?usp=sharing";
+
   const misProyectos = [
     {
       id: 1,
-      titulo: "Backend Node.js - API REST",
-      descripcion: "Diseño y despliegue de un servidor utilizando Node.js y Express destinado al control estricto de usuarios, sesiones y rutas protegidas.",
-      tecnologias: ["Node.js", "Express", "JavaScript"],
-      // CAMBIO MANUAL DE ENLACES PARA EVALUACIÓN
-      linkGithub: "REEMPLAZA_CON_LINK_DE_GITHUB_PROYECTO_1", 
-      linkDeploy: "REEMPLAZA_CON_LINK_DE_DEPLOY_PROYECTO_1"
+      titulo: "Agenda Web",
+      descripcion: "Diseño echo en JavaScript y completamente funcionable los usuarios puedad añadir eliminar y editar los contactos y las tareas",
+      tecnologias: ["JavaScript", "CSS", "DockerFile"],
+      linkGithub: "https://github.com/Marioescobar64/Agenda-Web", 
+      linkDeploy: "https://marioescobar64.github.io/Agenda-Web/"
     },
     {
       id: 2,
-      titulo: "Frontend React - Dashboard",
-      descripcion: "Interfaz web interactiva con gestión modularizada de vistas, componentes dinámicos y animaciones de entrada/salida enfocadas al 100% en la UX.",
+      titulo: "Pagina Web",
+      descripcion: "Pagina Web echo con un diseño por mi ademas puedes ver mas sobre mi",
       tecnologias: ["React.js", "Vite", "Framer Motion"],
-      linkGithub: "REEMPLAZA_CON_LINK_DE_GITHUB_PROYECTO_2",
-      linkDeploy: "REEMPLAZA_CON_LINK_DE_DEPLOY_PROYECTO_2"
+      linkGithub: "https://github.com/Marioescobar64/Pagina-Web.git",
+      linkDeploy: "https://marioescobar64.github.io/Pagina-Web/"
     },
     {
       id: 3,
-      titulo: "Portafolio de Diseño Minimalista",
-      descripcion: "Proyecto técnico de presentación profesional que integra estados de React avanzados para alternancia fluida de entornos gráficos claro y oscuro.",
-      tecnologias: ["React", "CSS", "Framer Motion"],
-      linkGithub: "REEMPLAZA_CON_LINK_DE_GITHUB_PROYECTO_3",
-      linkDeploy: "REEMPLAZA_CON_LINK_DE_DEPLOY_PROYECTO_3"
+      titulo: "Backend donacion de sangre",
+      descripcion: "En este proyecto se encarga de manejar la logica de la donacion de sangre, ademas de interactuar con la base de datos",
+      tecnologias: ["Java", "MySQL", "PostMan", "NetBeans"],
+      linkGithub: "https://github.com/Marioescobar64/Proyecto-Final.git"
     }
   ];
 
@@ -76,7 +77,6 @@ export function Projects() {
                 ))}
               </div>
 
-              {/* Botones de acción exigidos: Enlaces a GitHub + Despliegue Funcional */}
               <div style={{ display: "flex", gap: "12px", marginTop: "auto" }}>
                 <a 
                   href={proyecto.linkGithub} 
@@ -89,24 +89,27 @@ export function Projects() {
                 >
                   GitHub
                 </a>
-                <a 
-                  href={proyecto.linkDeploy} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  style={{
-                    flex: 1, padding: "10px", textAlign: "center", borderRadius: "10px",
-                    border: "1px solid var(--color1)", color: "var(--color1)", fontWeight: "600", fontSize: "0.9rem"
-                  }}
-                >
-                  Ver Demo
-                </a>
+
+                {proyecto.linkDeploy && (
+                  <a 
+                    href={proyecto.linkDeploy} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    style={{
+                      flex: 1, padding: "10px", textAlign: "center", borderRadius: "10px",
+                      border: "1px solid var(--color1)", color: "var(--color1)", fontWeight: "600", fontSize: "0.9rem"
+                    }}
+                  >
+                    Ver Demo
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Sección E: Apartado exclusivo de Vistas de Proyectos con el botón de Redirección solicitado */}
+      {/* Sección E: Redirección directa a Google Drive */}
       <section style={{ width: "100%", marginTop: "30px" }}>
         <motion.div 
           className="glass-card"
@@ -116,20 +119,31 @@ export function Projects() {
           style={{ textAlign: "center", borderStyle: "dashed" }}
         >
           <h3 style={{ color: "var(--color1)", marginBottom: "15px" }}>Galería e Interfaz Visual</h3>
-          <p style={{ color: "var(--color2)", marginBottom: "20px" }}>Explora capturas extendidas de pantallas y la arquitectura visual estricta de mis desarrollos.</p>
-          <button 
+          <p style={{ color: "var(--color2)", marginBottom: "20px" }}>Explora capturas extendidas de pantallas y la arquitectura visual estricta de mis desarrollos en Google Drive.</p>
+          
+          {/* 2. BOTÓN ENLACE A GOOGLE DRIVE */}
+          <a 
+            href={urlGoogleDrive}
+            target="_blank" 
+            rel="noreferrer"
             style={{
-              padding: "12px 30px", borderRadius: "30px", background: "var(--color3)",
-              color: "var(--color5)", border: "none", fontWeight: "700", cursor: "pointer", transition: "all 0.3s"
+              display: "inline-block",
+              padding: "12px 30px", 
+              borderRadius: "30px", 
+              background: "var(--color3)",
+              color: "var(--color5)", 
+              border: "none", 
+              fontWeight: "700", 
+              cursor: "pointer", 
+              textDecoration: "none",
+              transition: "all 0.3s"
             }}
-            onClick={() => alert('Redireccionando a la galería de interfaces...')}
           >
             Ver Vista de Proyectos →
-          </button>
+          </a>
         </motion.div>
       </section>
 
-      {/* Cierre de Estructura: Footer / Sección de Cierre Profesional de la App */}
       <footer style={{ marginTop: "80px", textAlign: "center", fontSize: "0.9rem", color: "var(--color3)" }}>
         <p>© 2026 Mario Alejandro Escobar Silva | Portafolio Técnico Desarrollador - Taller III</p>
       </footer>
